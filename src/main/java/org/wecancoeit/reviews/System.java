@@ -7,30 +7,38 @@ import javax.persistence.Id;
 //POJO
 
 @Entity
-public class Console {
+public class System {
 
     @Id
     @GeneratedValue
     public long id;
+    public String name;
     private String manufacturer;
     private String releaseDate;
     private String medium;
     private String type;
     private String controllerSupport;
     private String output;
+    private int rating;
 
-    private Console() {
 
-    }
 
-    public Console(long id, String manufacturer, String releaseDate, String medium, String type, String controllerSupport, String output) {
-        this.id = id;
+    public System(String name, String manufacturer, String releaseDate, String medium, String type, String controllerSupport, String output, int rating) {
+        this.name = name;
         this.manufacturer = manufacturer;
         this.releaseDate = releaseDate;
         this.medium = medium;
         this.type = type;
         this.controllerSupport = controllerSupport;
         this.output = output;
+        this.rating = rating;
+    }
+
+    private System() {
+    }
+
+    public String getName() {
+        return name;
     }
 
     public String getManufacturer() {
@@ -55,5 +63,9 @@ public class Console {
 
     public String getOutput() {
         return output;
+    }
+
+    public int getRating() {
+        return rating;
     }
 }
