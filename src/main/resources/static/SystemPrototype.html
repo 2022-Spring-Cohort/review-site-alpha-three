@@ -3,28 +3,78 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>System</title>
-</head>
-<body>
-<header>
-    <h1>Alpha 3 Reviews</h1>
-</header>
-<main>
-    <section class = "systemDetails">
-        <h1>System Name</h1>
-        <h2>Manufacturer of system</h2>
-        <p>System release date</p>
-        <p>System medium</p>
-        <p>Handheld or Console</p>
-        <p>Controller support</p>
-        <p>Output</p>
-        <h2>Rating</h2>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplha 3 Reviews</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../css/system.css">
 
-        <a href="./AllSystems.html">Back to all systems</a>
-    </section>
+    <!-- fonts -->
+
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap"> -->
+    
+</head>
+
+<!-- nav bar -->
+
+<body>
+
+    <header class="header-nav">
+        <div class="logo">
+            <img src="../Images/alpha 3 logo.jpg" class="logoimg">
+        </div>
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="#Home" class="nav__link">Home</a></li>
+                <li class="nav__item"><a href="../static/AllSystems.html" class="nav__link">All Consoles</a></li>
+                <li class="nav__item"><a href="#Rating" class="nav__link">Rating</a></li>
+                <li class="nav__item"><a href="#Manufacturer" class="nav__link">Manufacturer</a></li>
+                <li class="nav__item"><a href="#footer" class="nav__link">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main page area -->
+    <div class = "reviewSection">
+
+        <section class = "description">
+            <h1 class = "systemName">System Name</h1>
+            <img class = "system_image" src="../Images/SNES.png">
+            <p class = "systemDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid laborum unde necessitatibus, dolorem, magnam suscipit sapiente quo eligendi voluptatem, eum neque eaque at enim? Iure deleniti, dicta dolor in animi placeat nisi vero, eaque alias nam voluptatum consequuntur soluta neque odio! Est, maiores! Consectetur nemo ab suscipit natus possimus itaque?</p>
+        </section>
+        
+        <section class = "systemDetails">
+            <h2 class = "manufacturer">Manufacturer of system</h2>
+            <p class = "releaseDate">System release date</p>
+            <p class = "systemMedium">System medium</p>
+            <p class = "portability">Handheld or Console</p>
+            <p class = "controllerSupport">Controller support</p>
+            <p class = "outputType">Output Type</p>
+        </section>
+
+        <section class = "ratingSection">
+            <h2>Rating</h2>
+            <ul class="rate-area">
+                <input type="radio" id="5-star" name="crating" value="5">
+                    <label for="5-star" title="Amazing">5 stars</label>
+                <input type="radio" id="4-star" name="crating" value="4">
+                    <label for="4-star" title="Good">4 stars</label>
+                <input type="radio" id="3-star" name="crating" value="3">
+                    <label for="3-star" title="Average">3 stars</label>
+                <input type="radio" id="2-star" name="crating" value="2">
+                    <label for="2-star" title="Not Good">2 stars</label>
+                <input type="radio" id="1-star" required="" name="crating" value="1" aria-required="true">
+                    <label for="1-star" title="Bad">1 star</label>
+              </ul>
+        </section>
+    </div>
+
 </main>
 
+ <!-- footer -->
 
+    <footer class="footer" id="footer">
+        <p>Thanks for stopping by.</p>
+    </footer>
 
 </body>
 </html>
