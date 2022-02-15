@@ -86,7 +86,6 @@
 }
 
 /* Main page area */
-
 .intro {
     position: relative;
     padding-top: 12em;
@@ -185,3 +184,4 @@ h1 {
     .box:hover {
         flex: 7;
     }
+}
