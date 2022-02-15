@@ -1,0 +1,187 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* custom properties */
+
+:root {
+    --font-family-primary: 'Source Sans Pro', sans-serif;
+    --font-family-secondary: 'Source Code Pro', monospace;
+    --font-weight-regular: 300;
+    --font-weight-bold: 900;
+    --color-light: #fff;
+    --color-dark: #1b1b1b;
+    --color-accent: #909ba3;
+    --font-style-h1: 3rem;
+    --font-style-h2: 2.25rem;
+    --font-style-h3: 1.25rem;
+    --font-style-body: 1rem;
+    --box-shadow: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.651);
+}
+
+@media (min-width: 800px) {
+    :root {
+       --font-style-h1: 4.5rem;
+       --font-style-h2: 3.75rem;
+       --font-style-h3: 1.5rem;
+       --font-style-body: 1.125rem;
+   }
+}
+
+/* nav bar */
+
+.header-nav {
+    position: fixed;
+    z-index: 3;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-left: 1em;
+    padding-right: 1em;
+    background: white;
+}
+
+.logoimg{
+    max-width: 100px;
+
+}
+
+.nav {
+    list-style: none;
+    text-transform: uppercase;
+}
+
+.nav__list {
+    list-style: none;
+    text-decoration: none;
+    letter-spacing:
+}
+
+.nav__list {
+    display: flex;
+}
+
+.nav__link {
+    text-decoration: none;
+    display: block;
+    padding: .5em;
+    color: var(--color-dark);
+}
+
+.nav__link:hover {
+    background: var(--color-accent);
+}
+
+@media (max-width: 600px) {
+    .logo {
+        margin: .25em 0;
+        align-self: left;
+    }
+    .nav {
+        flex-direction: column;
+    }
+}
+
+/* Main page area */
+
+.intro {
+    position: relative;
+    padding-top: 12em;
+    padding-bottom: 12em;
+    background-image: url(../Images/Controllers.png);
+    background-size: 100% auto;
+    background-blend-mode: multiply;
+    background-color: var(--color-accent);
+}
+h1 {
+    color: var(--color-accent);
+}
+
+.intro__img {
+    box-shadow: var(--box-shadow);
+}
+
+.section__subtitle--intro {
+    display: inline-block;
+}
+
+/* accordion */
+
+.accordion {
+    max-width: 990px;
+    background: rgba(0, 0, 0, 0.10);
+    height: 300px;
+    margin: 20px auto;
+    display: flex;
+    box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.47);
+    flex-direction: row;
+    cursor: pointer;
+    margin-bottom: 100px;
+}
+.box {
+    position: relative;
+    height: 100%;
+    flex: 1;
+    background-position: left;
+    background-size: cover;
+    transition: .7s;
+    box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.47);
+}
+.box:hover{
+    flex: 7;
+    height: 400px;
+}
+.a1 {
+    background-image: url("../Images/playstation.jpg");
+    color: var(--color-light);
+}
+.a2 {
+    background-image: url("../Images/ps4.jpg")
+}
+.a3 {
+    background-image: url("../Images/Nintendo\ GB\ color.jpg");
+    color: #fff;
+}
+.a4 {
+    background-image: url("../Images/Nintendo\ ds.jpg");
+    color: var(--color-dark);
+}
+.a5 {
+    background-image: url("../Images/ps2.jpg"); 
+}
+p {
+    font-weight: normal;
+    font-family: 'Exo 2', sans-serif;
+}
+.text {
+    position: absolute;
+    bottom: 0;
+    opacity: 0;
+    padding: 10px;
+}
+.box:hover .text{
+    opacity:1;
+}
+h1 {
+    width: 250px;
+    text-align: center;
+    margin: 100px auto 20px auto;
+}
+@media screen and (max-width: 800px){
+    body{
+        margin: 0;
+    }
+    .accordion {
+        flex-direction: column;
+        height: 700px;
+        box-shadow: none;
+    }
+    .box {
+        box-shadow: none;
+    }
+    .box:hover {
+        flex: 7;
+    }
