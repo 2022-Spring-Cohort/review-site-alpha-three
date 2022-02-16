@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Book</title>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to Consoles!</h1>
+    </header>
+    <section class="console-collection">
+        <ul>
+            <li th:each="myBook: ${books}"><a th:href="|/books/${myBook.id}|" th:text="${myBook.title}">Sample Book Title</a></li>-->
+            <li th:each="myConsole: ${consoles}"><a th:href="'/consoles/' + ${myConsole.id}" th:text="${myConsole.name}">Sample Book
+                    Title</a></li>
+        </ul>
+    </section>
+</body>
+
+</html>
+</html>
