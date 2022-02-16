@@ -107,6 +107,9 @@ img {
     }
     
     /* header */
+
+
+    
     
     .image-container{
         background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(128, 0, 0, 0.911)), url(../Images/consoles.jpg);
@@ -139,16 +142,23 @@ img {
 
 /* Main Area */
 
+body {
+    margin: 0;
+    padding: 0;
+}
+
 .reviewSection {
     display: grid;
     grid-template-columns: 1fr 2fr 2fr 1fr;
-    grid-template-rows: auto auto;
+    grid-template-rows: auto auto auto;
     font-family: var(--font-family-primary);
+    grid-gap: 1em;
+    width: 100%;
+    margin: 5px;
 }
 
 .top {
     grid-column: 2 / 4;
-    margin: 1em;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -160,17 +170,20 @@ img {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    margin: 1em;
-    padding: 1em;
     border-radius: 25px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .description {
     width: 100%;
-    padding: 1em;
     border-radius: 25px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    grid-row: 2;
+    grid-column: 2 / 4;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .system_image {
@@ -179,7 +192,8 @@ img {
 
 .bottom {
     grid-column: 2 / 4;
-    grid-row: 2;
+    grid-row: 3;
+    gap: 1em;
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -191,8 +205,20 @@ img {
     padding: 1em;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     border-radius: 25px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.systemDescription{
+    padding: 1em;
+    margin: 0;
+}
+
+.systemName {
+    margin: 0;
+    padding: 0;
+    margin-top: 1em;
 }
 
 .ratingSection {
