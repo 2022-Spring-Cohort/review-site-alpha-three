@@ -1,13 +1,15 @@
-package org.wecancoeit.reviews;
+package org.wecancoeit.reviews.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Collection;
 
 //POJO
 
 @Entity
-public class System {
+public class Console {
 
     @Id
     @GeneratedValue
@@ -15,26 +17,23 @@ public class System {
     public String name;
     private String manufacturer;
     private String releaseDate;
-    private String medium;
     private String type;
-    private String controllerSupport;
-    private String output;
     private int rating;
 
+    @ManyToMany(mappedBy = "consoles")
+    private Collection<Manufacturer> manufacturers ;
 
 
-    public System(String name, String manufacturer, String releaseDate, String medium, String type, String controllerSupport, String output, int rating) {
+
+    public Console(String name, String manufacturer, String releaseDate, String type) {
         this.name = name;
         this.manufacturer = manufacturer;
         this.releaseDate = releaseDate;
-        this.medium = medium;
         this.type = type;
-        this.controllerSupport = controllerSupport;
-        this.output = output;
         this.rating = rating;
     }
 
-    private System() {
+    private Console() {
     }
 
     public String getName() {
@@ -49,21 +48,11 @@ public class System {
         return releaseDate;
     }
 
-    public String getMedium() {
-        return medium;
-    }
 
     public String getType() {
         return type;
     }
 
-    public String getControllerSupport() {
-        return controllerSupport;
-    }
-
-    public String getOutput() {
-        return output;
-    }
 
     public int getRating() {
         return rating;
