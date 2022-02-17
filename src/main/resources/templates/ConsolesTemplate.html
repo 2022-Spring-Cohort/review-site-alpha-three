@@ -11,13 +11,10 @@
         <h1>Welcome to Consoles!</h1>
     </header>
     <section class="console-collection">
-        <ul>
-            <li th:each="myBook: ${books}"><a th:href="|/books/${myBook.id}|" th:text="${myBook.title}">Sample Book Title</a></li>-->
+    <ul>
             <li th:each="myConsole: ${consoles}"><a th:href="'/consoles/' + ${myConsole.id}" th:text="${myConsole.name}">Sample Book
                     Title</a></li>
         </ul>
     </section>
 </body>
-
-</html>
 </html>

@@ -19,6 +19,8 @@ public class Console {
     private String releaseDate;
     private String type;
     private int rating;
+    private String description;
+    private String hashtags;
 
     @ManyToMany(mappedBy = "consoles")
     private Collection<Manufacturer> manufacturers ;
@@ -30,7 +32,8 @@ public class Console {
         this.manufacturer = manufacturer;
         this.releaseDate = releaseDate;
         this.type = type;
-        this.rating = rating;
+        this.rating = 0;
+        this.description = "";
     }
 
     private Console() {
@@ -48,6 +51,21 @@ public class Console {
         return releaseDate;
     }
 
+    public long getId() {
+        return id;
+    }
+
+    public String getHashtags() {
+        return hashtags;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public Collection<Manufacturer> getManufacturers() {
+        return manufacturers;
+    }
 
     public String getType() {
         return type;

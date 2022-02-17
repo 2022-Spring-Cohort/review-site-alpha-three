@@ -14,19 +14,16 @@
 </header>
 <main>
     <h1 th:text="${inConsole.name}">System Name</h1>
-    <p th:text="{inConsole.releaseDate}">System release date</p>
-    <p th:text="{inConsole.manufacturer}">System release date</p>
-    <p th:text="${inConsole.medium}">System medium</p>
+    <p th:text="${inConsole.releaseDate}">System release date</p>
+    <p th:text="${inConsole.manufacturer}">System manufacturer</p>
     <p th:text="${inConsole.type}">Handheld or Console</p>
-    <p th:text="${inConsole.controllerSupport}">Controller support</p>
-    <p th:text="${inConsole.output}">Output</p>
     <p th:text="${inConsole.rating}">Rating</p>
     <p th:text="${inConsole.description}">Description</p>
     <p th:text="${inConsole.hashtags}">Hashtags</p>
     <ul>
-        <li th:each="manufacturer: ${inBook.manufacturers}"><a th:href="'manufacturers/' + ${manufacturer.id}" th:text="${manufacturer.name}">Sample
+        <li th:each="manufacturer: ${inConsole.manufacturers}"><a th:href="'manufacturers/' + ${manufacturer.id}" th:text="${manufacturer.name}">Sample
                 manufacturer name</a></li>
-    </ul>e
+    </ul>
 
 </main>
 

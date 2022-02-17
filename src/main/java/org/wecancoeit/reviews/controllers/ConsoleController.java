@@ -17,9 +17,9 @@ public class ConsoleController {
     }
 
     @RequestMapping("/")
-    public String showConsoleTemplate(Model model) {
-        model.addAttribute("console", consoleRepo.findAll());
-        return "ConsoleTemplate";
+    public String showConsolesTemplate(Model model) {
+        model.addAttribute("consoles", consoleRepo.findAll());
+        return "ConsolesTemplate";
     }
 
     @RequestMapping("/consoles/{id}")
@@ -28,7 +28,7 @@ public class ConsoleController {
         if (tempConsole.isPresent()) {
             model.addAttribute("inConsole", tempConsole.get());
         }
-        return "BookTemplate";
+        return "ConsoleTemplate";
     }
 
     @RequestMapping("/consoles/name/{name}")
