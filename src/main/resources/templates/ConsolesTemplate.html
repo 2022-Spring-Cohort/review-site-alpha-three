@@ -76,7 +76,7 @@
         <div class="consoles">
             <!-- console 1 -->
             <a th:each="console:${consoles}" th:href="'/console/'+${console.id}" class="console__item">
-                <img src="/Images/sega.png" alt="" class="console__img">
+                <img th:src="${console.imgUrl}" alt="picture of console" class="console__img">
                 <h2>Sega Genesis</h2>
             </a>
 
