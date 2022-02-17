@@ -23,6 +23,12 @@ public class ConsoleController {
         return "indexTemplate";
     }
 
+    @GetMapping("/consoles")
+    public String showConsolesemplate(Model model) {
+        model.addAttribute("consoles", consoleRepo.findAll());
+        return "ConsolesTemplate";
+    }
+
     @GetMapping("/consoles/{id}")
     public String showConsoleTemplate(Model model, @PathVariable long id) {
         Optional<Console> tempConsole = consoleRepo.findById(id);

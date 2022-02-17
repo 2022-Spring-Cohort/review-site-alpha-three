@@ -20,6 +20,7 @@ public class Console {
     private String type;
     private int rating;
     private String description;
+    private String imgUrl;
     private String hashtags;
 
     @ManyToMany(mappedBy = "consoles")
@@ -27,11 +28,12 @@ public class Console {
 
 
 
-    public Console(String name, String manufacturer, String releaseDate, String type) {
+    public Console(String name, String manufacturer, String releaseDate, String type,String imgUrl) {
         this.name = name;
         this.manufacturer = manufacturer;
         this.releaseDate = releaseDate;
         this.type = type;
+        this.imgUrl =
         this.rating = 0;
         this.description = "";
     }

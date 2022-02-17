@@ -6,7 +6,7 @@
 <!--</section>-->
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 
 <head>
@@ -61,7 +61,7 @@
     <div class="image-container">
         <h1 class="header-title"><strong>Alpha Three</strong><strong></strong></h1>
         <p class="header-subtitle"><strong>"Your #1 Console Review Source"</strong></p>
-        <img src="../Images/A3.png" class="logo">
+        <img src="/Images/A3.png" class="logo">
     </div>
 </header>
 
@@ -75,118 +75,117 @@
 
         <div class="consoles">
             <!-- console 1 -->
-            <a href="link to individual review" class="console__item">
-                <img src="/src/main/resources/Images/sega.png" alt="" class="console__img">
+            <a th:each="console:${consoles}" th:href="'/console/'+${console.id}" class="console__item">
+                <img src="/Images/sega.png" alt="" class="console__img">
                 <h2>Sega Genesis</h2>
             </a>
 
-            <!-- console 2 -->
-            <a href="link to individual review" class="console__item">
-                <img src="/src/main/resources/Images/gameboy.png" alt="" class="console__img">
-                <h2>Nintendo Gameboy</h2>
-            </a>
+<!--            &lt;!&ndash; console 2 &ndash;&gt;-->
+<!--            <a href="link to individual review" class="console__item">-->
+<!--                <img src="/Images/gameboy.png" alt="" class="console__img">-->
+<!--                <h2>Nintendo Gameboy</h2>-->
+<!--            </a>-->
 
-            <!-- console 3 -->
-            <a href="link to individual review" class="console__item">
-                <img src="/src/main/resources/Images/SNES.png" alt="" class="console__img">
-                <h2>Nintendo SNES</h2>
-            </a>
-        </div>
-        <div class="consoles">
-            <!-- console 1 -->
-            <a href="link to individual review" class="console__item">
-                <img src="/src/main/resources/Images/gamegear.png" alt="" class="console__img">
-                <h2>Sega Gamegear</h2>
-            </a>
+<!--            &lt;!&ndash; console 3 &ndash;&gt;-->
+<!--            <a th:href="/consoles/3" class="console__item">-->
+<!--                <img src="/Images/SNES.png" alt="" class="console__img">-->
+<!--                <h2>Nintendo SNES</h2>-->
+<!--            </a>-->
+<!--        </div>-->
+<!--        <div class="consoles">-->
+<!--            &lt;!&ndash; console 4 &ndash;&gt;-->
+<!--            <a href="link to individual review" class="console__item">-->
+<!--                <img src="/Images/gamegear.png" alt="" class="console__img">-->
+<!--                <h2>Sega Gamegear</h2>-->
+<!--            </a>-->
 
-            <!-- console 2 -->
-            <a href="link to individual review" class="console__item">
-                <img src="/src/main/resources/Images/ps1.png" alt="" class="console__img">
-                <h2>Playstation 1</h2>
-            </a>
-            <a href="link to individual review" class="console__item">
-                <img src="/src/main/resources/Images/dreamcast.png" alt="" class="console__img">
-                <h2>DreamCast</h2>
-            </a>
-            <!-- console 3 -->
-        </div>
-        <div class="consoles">
-            <!-- console 1 -->
-            <a href="link to individual review" class="console__item">
-                <img src="/src/main/resources/Images/ps2.png" alt="" class="console__img">
-                <h2>Playstation 2</h2>
-            </a>
+<!--            &lt;!&ndash; console 5 &ndash;&gt;-->
+<!--            <a href="link to individual review" class="console__item">-->
+<!--                <img src="/Images/ps1.png" alt="" class="console__img">-->
+<!--                <h2>Playstation 1</h2>-->
+<!--            </a>-->
+<!--            &lt;!&ndash; console 6 &ndash;&gt;-->
+<!--            <a href="link to individual review" class="console__item">-->
+<!--                <img src="/Images/dreamcast.png" alt="" class="console__img">-->
+<!--                <h2>DreamCast</h2>-->
+<!--            </a>-->
 
-            <!-- console 2 -->
-            <a href="link to individual review" class="console__item">
-                <img src="/src/main/resources/Images/xbox1.png" alt="" class="console__img">
-                <h2>Xbox</h2>
-            </a>
+<!--        </div>-->
+<!--        <div class="consoles">-->
+<!--            &lt;!&ndash; console 7 &ndash;&gt;-->
+<!--            <a href="link to individual review" class="console__item">-->
+<!--                <img src="/Images/ps2.png" alt="" class="console__img">-->
+<!--                <h2>Playstation 2</h2>-->
+<!--            </a>-->
 
-            <!-- console 3 -->
-            <a href="link to individual review" class="console__item">
-                <img src="/src/main/resources/Images/Nintendo ds.png" alt="" class="console__img">
-                <h2>Nintendo DS</h2>
-            </a>
-        </div>
-        <div class="consoles">
-            <!-- console 1 -->
-            <a href="link to individual review" class="console__item">
-                <img src="/src/main/resources/Images/xbox360.png" alt="" class="console__img">
-                <h2>Xbox 360</h2>
-            </a>
+<!--            &lt;!&ndash; console 8 &ndash;&gt;-->
+<!--            <a href="link to individual review" class="console__item">-->
+<!--                <img src="/Images/xbox1.png" alt="" class="console__img">-->
+<!--                <h2>Xbox</h2>-->
+<!--            </a>-->
 
-            <!-- console 2 -->
-            <a href="link to individual review" class="console__item">
-                <img src="/src/main/resources/Images/ps3.png" alt="" class="console__img">
-                <h2>Playstation 3</h2>
-            </a>
+<!--            &lt;!&ndash; console 9 &ndash;&gt;-->
+<!--            <a href="link to individual review" class="console__item">-->
+<!--                <img src="/Images/Nintendo ds.png" alt="" class="console__img">-->
+<!--                <h2>Nintendo DS</h2>-->
+<!--            </a>-->
+<!--        </div>-->
+<!--        <div class="consoles">-->
+<!--            &lt;!&ndash; console 10 &ndash;&gt;-->
+<!--            <a href="link to individual review" class="console__item">-->
+<!--                <img src="/Images/xbox360.png" alt="" class="console__img">-->
+<!--                <h2>Xbox 360</h2>-->
+<!--            </a>-->
 
-            <!-- console 3 -->
-            <a href="link to individual review" class="console__item">
-                <img src="/src/main/resources/Images/wii.png" alt="" class="console__img">
-                <h2>Nintendo Wii</h2>
-            </a>
-        </div>
-        <div class="consoles">
-            <!-- console 1 -->
-            <a href="link to individual review" class="console__item">
-                <img src="/src/main/resources/Images/psvita.png" alt="" class="console__img">
-                <h2>PS Vita</h2>
-            </a>
-            <!-- console 2 -->
-            <a href="link to individual review" class="console__item">
-                <img src="/src/main/resources/Images/ps4 console.png" alt="" class="console__img">
-                <h2>Playstation 4</h2>
-            </a>
+<!--            &lt;!&ndash; console 11 &ndash;&gt;-->
+<!--            <a href="link to individual review" class="console__item">-->
+<!--                <img src="/Images/ps3.png" alt="" class="console__img">-->
+<!--                <h2>Playstation 3</h2>-->
+<!--            </a>-->
 
-            <!-- console 3 -->
-            <a href="link to individual review" class="console__item">
-                <img src="/src/main/resources/Images/xbox.png" alt="" class="console__img">
-                <h2>Xbox One</h2>
-            </a>
-        </div>
-        <div class="consoles">
-            <!-- console 1 -->
-            <a href="link to individual review" class="console__item">
-                <img src="/src/main/resources/Images/switch.png" alt="" class="console__img">
-                <h2>Nintendo Switch</h2>
-            </a>
+<!--            &lt;!&ndash; console 12 &ndash;&gt;-->
+<!--            <a href="link to individual review" class="console__item">-->
+<!--                <img src="/Images/wii.png" alt="" class="console__img">-->
+<!--                <h2>Nintendo Wii</h2>-->
+<!--            </a>-->
+<!--        </div>-->
+<!--        <div class="consoles">-->
+<!--            &lt;!&ndash; console 13 &ndash;&gt;-->
+<!--            <a href="link to individual review" class="console__item">-->
+<!--                <img src="/Images/psvita.png" alt="" class="console__img">-->
+<!--                <h2>PS Vita</h2>-->
+<!--            </a>-->
+<!--            &lt;!&ndash; console 14 &ndash;&gt;-->
+<!--            <a href="link to individual review" class="console__item">-->
+<!--                <img src="/Images/ps4 console.png" alt="" class="console__img">-->
+<!--                <h2>Playstation 4</h2>-->
+<!--            </a>-->
 
-            <!-- console 2 -->
-            <a href="link to individual review" class="console__item">
-                <img src="/src/main/resources/Images/xbox series x.png" alt="" class="console__img">
-                <h2>Playstation 5</h2>
-            </a>
+<!--            &lt;!&ndash; console 15 &ndash;&gt;-->
+<!--            <a href="link to individual review" class="console__item">-->
+<!--                <img src="/Images/xbox.png" alt="" class="console__img">-->
+<!--                <h2>Xbox One</h2>-->
+<!--            </a>-->
+<!--        </div>-->
+<!--        <div class="consoles">-->
+<!--            &lt;!&ndash; console 16 &ndash;&gt;-->
+<!--            <a href="link to individual review" class="console__item">-->
+<!--                <img src="/Images/switch.png" alt="" class="console__img">-->
+<!--                <h2>Nintendo Switch</h2>-->
+<!--            </a>-->
 
-            <!-- console 3 -->
-            <a href="link to individual review" class="console__item">
-                <img src="/src/main/resources/Images/ps5.png" alt="" class="console__img">
-                <h2>Xbox One</h2>
-            </a>
+<!--            &lt;!&ndash; console 17 &ndash;&gt;-->
+<!--            <a href="link to individual review" class="console__item">-->
+<!--                <img src="/Images/xbox series x.png" alt="" class="console__img">-->
+<!--                <h2>Playstation 5</h2>-->
+<!--            </a>-->
 
-            </a>
-        </div>
+<!--            &lt;!&ndash; console 18 &ndash;&gt;-->
+<!--            <a href="link to individual review" class="console__item">-->
+<!--                <img src="/Images/ps5.png" alt="" class="console__img">-->
+<!--                <h2>Xbox One</h2>-->
+<!--            </a>-->
+<!--        </div>-->
     </section>
 </section>
 
