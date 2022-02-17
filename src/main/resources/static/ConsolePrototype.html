@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
 
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aplha 3 Reviews</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="../css/system.css">
+    <link rel="stylesheet" href="/src/main/resources/css/system.css">
 
     <!-- fonts -->
 
@@ -62,7 +62,7 @@
     <div class = "reviewSection">
         <div class = top>
             <section class = "nameImage">
-                <h1 class = "systemName">System Name</h1>
+                <h1 th:text="${inConsole.name}">System Name</h1>
                 <img class = "system_image" src="../Images/SNES.png">
             </section>
         </div>
@@ -73,12 +73,12 @@
 
         <div class = "bottom">
             <section class = "systemDetails">
-                <h2 class = "manufacturer">Manufacturer of system</h2>
-                <p class = "releaseDate">System release date</p>
-                <p class = "systemMedium">System medium</p>
-                <p class = "portability">Handheld or Console</p>
-                <p class = "controllerSupport">Controller support</p>
-                <p class = "outputType">Output Type</p>
+                <p th:text="${inConsole.releaseDate}">System release date</p>
+                <p th:text="${inConsole.manufacturer}">System manufacturer</p>
+                <p th:text="${inConsole.type}">Handheld or Console</p>
+                <p th:text="${inConsole.rating}">Rating</p>
+                <p th:text="${inConsole.description}">Description</p>
+                <p th:text="${inConsole.hashtags}">Hashtags</p>
             </section>
 
             <section class = "ratingSection">

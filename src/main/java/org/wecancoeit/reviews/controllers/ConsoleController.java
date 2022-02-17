@@ -2,6 +2,7 @@ package org.wecancoeit.reviews.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.wecancoeit.reviews.entities.Console;
@@ -16,13 +17,13 @@ public class ConsoleController {
         this.consoleRepo = consoleRepo;
     }
 
-    @RequestMapping("/")
-    public String showConsolesTemplate(Model model) {
+    @GetMapping("/")
+    public String showIndexTemplate(Model model) {
         model.addAttribute("consoles", consoleRepo.findAll());
-        return "ConsolesTemplate";
+        return "indexTemplate";
     }
 
-    @RequestMapping("/consoles/{id}")
+    @GetMapping("/consoles/{id}")
     public String showConsoleTemplate(Model model, @PathVariable long id) {
         Optional<Console> tempConsole = consoleRepo.findById(id);
         if (tempConsole.isPresent()) {
@@ -31,13 +32,13 @@ public class ConsoleController {
         return "ConsoleTemplate";
     }
 
-    @RequestMapping("/consoles/name/{name}")
+    @GetMapping("/consoles/name/{name}")
     public String showConsoleByName(Model model, @PathVariable String name) {
         Optional<Console> tempConsole = consoleRepo.findByNameIgnoreCase(name);
         if (tempConsole.isPresent()) {
-            model.addAttribute("inBook", tempConsole.get());
+            model.addAttribute("inConsole", tempConsole.get());
         }
-        return "ConsoleTemplate";
+        return "ConsolesTemplate";
     }
 
 }
