@@ -8,7 +8,7 @@
 /* custom properties */
 
 :root {
-    --font-family-primary: 'Source Sans Pro', sans-serif;
+    --font-family-primary:'Odibee Sans', cursive;
     --font-family-secondary: 'Source Code Pro', monospace;
     --font-weight-regular: 300;
     --font-weight-bold: 900;
@@ -30,6 +30,11 @@
        --font-style-body: 1.125rem;
    }
 }
+html { 
+    background: url(../Images/cornerMario.jpg) no-repeat center center fixed;
+    max-width: 100%; 
+    background-size: cover;
+}
 
 /* general styles */
 
@@ -41,104 +46,103 @@ img {
 /* nav bar */
 
 .navbar {
-    position: fixed;
-    z-index: 2;
-    height: 50px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 0;
-    padding-left: 1em;
-    padding-right: 1em;
-    background-color: var(--color-dark);
-    font-family: var(--font-family-secondary);
+position: fixed;
+z-index: 2;
+height: 50px;
+width: 100%;
+display: flex;
+justify-content: center;
+margin-top: 0;
+padding-left: 1em;
+padding-right: 1em;
+background-color: var(--color-dark);
+font-family: var(--font-family-secondary);
+}
+.navbar a {
+float: left;
+font-size: 18px;
+color: white;
+text-align: center;
+padding: 16px 18px;
+text-decoration: none;
+}
+.dropdown {
+float: left;
+overflow: hidden;
+}
+.dropdown .dropbtn {
+font-size: 18px;
+border: none;
+outline: none;
+color: white;
+padding: 16px 18px;
+background-color: inherit;
+font-family: inherit; 
+margin: 0; 
+}
+.navbar a:hover, .dropdown:hover .dropbtn {
+background-color: red;
+}
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: #f9f9f9;
+min-width: 100px;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1;
+}
+.dropdown-content a {
+float: none;
+color: black;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+text-align: left;
+}
+.dropdown-content a:hover {
+background-color: #ddd;
+}
+.dropdown:hover .dropdown-content {
+display: block;
+}
+@media (max-width: 800px) {
+    .nav {
+        flex-direction: column;
     }
-    .navbar a {
-    float: left;
-    font-size: 18px;
-    color: white;
+}
+
+/* header */
+
+.image-container{
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgb(0, 22, 70)), url(../Images/consoles.jpg);
+    padding-top: 4em;
+    height: 360px;
+    max-width: 100%;
+    background-size: cover;
+    color: rgb(0, 0, 0);
     text-align: center;
-    padding: 16px 18px;
-    text-decoration: none;
-    }
-    .dropdown {
-    float: left;
-    overflow: hidden;
-    }
-    .dropdown .dropbtn {
-    font-size: 18px;
-    border: none;
-    outline: none;
-    color: white;
-    padding: 16px 18px;
-    background-color: inherit;
-    font-family: inherit; 
-    margin: 0; 
-    }
-    .navbar a:hover, .dropdown:hover .dropbtn {
-    background-color: red;
-    }
-    .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 100px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    }
-    .dropdown-content a {
-    float: none;
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-    }
-    .dropdown-content a:hover {
-    background-color: #ddd;
-    }
-    .dropdown:hover .dropdown-content {
-    display: block;
-    }
-    @media (max-width: 800px) {
-        .nav {
-            flex-direction: column;
-        }
-    }
-    
-    /* header */
-
-
-    
-    
-    .image-container{
-        background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(128, 0, 0, 0.911)), url(../Images/consoles.jpg);
-        padding-top: 4em;
-        height: 450px;
-        max-width: 100%;
-        background-size: cover;
-        color: rgb(0, 0, 0);
-        text-align: center;
-    }
-    .header-title{
-        padding-top: 3em;
-        font-family: var(--font-family-secondary);
-        text-transform: uppercase;
-        margin: 0;
-        font-size: 3.5rem;
-        white-space: nowrap;
-    }
-    .header-subtitle{
-        font-family: var(--font-family-secondary);
-        margin: 0;
-        font-size: 2rem;
-    }
-    .logo{
-        float: right;
-        width: 220px;
-        height: 200px;
-        background: transparent;
-    }
+}
+.header-title{
+    padding-top: 1em;
+    padding-left: 1em;
+    font-family: var(--font-family-primary);
+    text-transform: uppercase;
+    margin: 0;
+    font-size: 3.5rem;
+    white-space: nowrap;
+}
+.header-subtitle{
+    font-family: var(--font-family-primary);
+    padding-top: 1em;
+    margin: 0;
+    font-size: 1.75rem;
+}
+.logo{
+    float: right;
+    width: 220px;
+    height: 200px;
+    background: transparent;
+}
 
 /* Main Area */
 
