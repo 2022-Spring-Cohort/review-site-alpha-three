@@ -31,11 +31,8 @@
    }
 }
 html { 
-    background: url(../Images/corner\ mario.jpg) no-repeat center center fixed;
-    width: 100%; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
+    background: url(../Images/cornerMario.jpg) no-repeat center center fixed;
+    max-width: 100%; 
     background-size: cover;
 }
 
@@ -258,9 +255,14 @@ h1 {
     background: var(--color-dark);
     color: var(--color-light);
     text-align: center;
+    width: 100%;
     height: auto;
-    padding: 1em 0;
+    padding: 1em;
+    position: absolute;
     font-size: var(--font-style-h3);
+}
+.footer p{
+    font-family: var(--font-family-secondary);
 }
 
 .footer a {
