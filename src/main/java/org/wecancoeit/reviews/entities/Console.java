@@ -33,7 +33,7 @@ public class Console {
         this.manufacturer = manufacturer;
         this.releaseDate = releaseDate;
         this.type = type;
-        this.imgUrl =
+        this.imgUrl = imgUrl;
         this.rating = 0;
         this.description = "";
     }
@@ -76,5 +76,9 @@ public class Console {
 
     public int getRating() {
         return rating;
+    }
+
+    public String getImgUrl() {
+        return imgUrl;
     }
 }
