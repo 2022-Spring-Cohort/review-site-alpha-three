@@ -151,6 +151,11 @@ display: block;
 
 /* accordion */
 
+body {
+    margin: 0;
+    padding: 0;
+}
+
 .accordion-title{
     padding-top: 2em;
     display: flex;
