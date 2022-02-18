@@ -68,45 +68,54 @@
     </div>
 
     <section class = "description">
-        <p class = "systemDescription" th:text="${inConsole.description}">Description</p>
+<!--        <p class = "systemDescription" th:text="${inConsole.description}">Description</p>-->
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
     </section>
 
     <div class = "bottom">
         <section class = "systemDetails">
-            <p th:text="${inConsole.releaseDate}">System release date</p>
-            <p th:text="${inConsole.manufacturer}">System manufacturer</p>
-            <p th:text="${inConsole.type}">Handheld or Console</p>
-            <p th:text="${inConsole.rating}">Rating</p>
-            <p th:text="${inConsole.description}">Description</p>
-            <p th:text="${inConsole.hashtags}">Hashtags</p>
+            <p>Release Date:</p>
+            <h2 th:text="${inConsole.releaseDate}"></h2>
+            <p>Manufacturer:</p>
+            <h2 th:text="${inConsole.manufacturer}"></h2>
+            <p>Portability:</p>
+            <h2 th:text="${inConsole.type}"></h2>
+            <p>Tags:</p>
+            <h2 th:text="${inConsole.hashtags}">Hashtags</h2>
         </section>
 
         <section class = "ratingSection">
-            <div class = "starSection">
-                <h2>Rating</h2>
-                <ul class="rate-area">
-                    <input type="radio" id="5-star" name="crating" value="5">
-                    <label for="5-star" title="Amazing">5 stars</label>
-                    <input type="radio" id="4-star" name="crating" value="4">
-                    <label for="4-star" title="Good">4 stars</label>
-                    <input type="radio" id="3-star" name="crating" value="3">
-                    <label for="3-star" title="Average">3 stars</label>
-                    <input type="radio" id="2-star" name="crating" value="2">
-                    <label for="2-star" title="Not Good">2 stars</label>
-                    <input type="radio" id="1-star" required="" name="crating" value="1" aria-required="true">
-                    <label for="1-star" title="Bad">1 star</label>
-                </ul>
-            </div>
+<!--            <div class = "starSection">-->
+<!--                <h2>Rating</h2>-->
+<!--                <ul class="rate-area">-->
+<!--                    <input type="radio" id="5-star" name="crating" value="5">-->
+<!--                    <label for="5-star" title="Amazing">5 stars</label>-->
+<!--                    <input type="radio" id="4-star" name="crating" value="4">-->
+<!--                    <label for="4-star" title="Good">4 stars</label>-->
+<!--                    <input type="radio" id="3-star" name="crating" value="3">-->
+<!--                    <label for="3-star" title="Average">3 stars</label>-->
+<!--                    <input type="radio" id="2-star" name="crating" value="2">-->
+<!--                    <label for="2-star" title="Not Good">2 stars</label>-->
+<!--                    <input type="radio" id="1-star" required="" name="crating" value="1" aria-required="true">-->
+<!--                    <label for="1-star" title="Bad">1 star</label>-->
+<!--                </ul>-->
+<!--            </div>-->
 
             <form class = "formContainer">
                 <label for="review">
-                    <h2>Review</h2>
+                    <h2>Submit Review</h2>
                 </label>
                 <textarea id="review" name="review" placeholder="Leave a review..." style="height:200px"></textarea>
                 <input type="submit">
             </form>
-
         </section>
+    </div>
+    <div class = "submittedReviews">
+        <h2>Submitted Reviews</h2>
+        <ul class = "reviewList">
+            <li>This is a sample review I like the console a lot because it play games and me like games.  Perfect score 5/7, 7/7 with rice.</li>
+            <li>I hate this stupid console I bought it and fell in love and started bringing it to bed with me, but my wife left and took the goldfish. It was fine for awhile, the console and I got along great. It is pretty low maintenance.  However, recently I've been noticing we have a lot of differences.  This console doesn't like the same music I do, and it won't ever go out dancing with me. I miss my wife.</li>
+        </ul>
     </div>
 </div>
 
