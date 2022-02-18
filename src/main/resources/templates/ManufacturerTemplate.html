@@ -1,23 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-
 <head>
     <meta charset="UTF-8">
     <title>Book</title>
 </head>
-
 <body>
-    <header>
-        <h1>Welcome to Manufacturer!</h1>
-    </header>
-    <main>
-        <h1 th:text="${inManufacturer.name}">Name of Manufacturer!</h1>
-        <p th:text="'Publisher: ' + ${inManufacturer.publisher}">The publisher is 1234567890</p>
-        <ul>
-            <li th:each="console: ${inManufacturer.books}"><a th:href="'/consoles/' + ${consoles.id}" th:text="${console.title}">Sample
-                    book name</a></li>
-        </ul>
-    </main>
+<header>
+    <h1>Welcome to Author!</h1>
+</header>
+<main>
+    <h1 th:text="${inManufacturer.name}">Name of man</h1>
+</main>
 </body>
-
 </html>

@@ -54,20 +54,13 @@ public class Populator implements CommandLineRunner {
         Console console18 = new Console("Playstation 5", "Sony", "11/10/2020", "Console", "/Images/ps5.png");
         consoleRepo.save(console18);
 
-
-//
-//        Manufacturer manufacturer = new Manufacturer("Microsoft", console4);
-//        manufacturerRepo.save(manufacturer);
-//        Manufacturer manufacturer2 = new Manufacturer("Sony");
-//        Manufacturer manufacturer3 = new Manufacturer("Nintendo");
-//        Manufacturer manufacturer4 = new Manufacturer("Sega", console);
-
-        // author4.addBook(book2); Only when using addBook method
-
-//        manufacturerRepo.save(manufacturer2);
-//        manufacturerRepo.save(manufacturer3);
-//        manufacturerRepo.save(manufacturer4);
-//        manufacturerRepo.save(manufacturer4);
-
+        Manufacturer manufacturer1 = new Manufacturer("Microsoft", console8, console9, console14, console16);
+        manufacturerRepo.save(manufacturer1);
+        Manufacturer manufacturer2 = new Manufacturer("Sony", console5, console7, console11, console13, console14, console18);
+        manufacturerRepo.save(manufacturer2);
+        Manufacturer manufacturer3 = new Manufacturer("Nintendo", console2, console3, console9, console12, console16);
+        manufacturerRepo.save(manufacturer3);
+        Manufacturer manufacturer4 = new Manufacturer("Sega", console1, console4, console6);
+        manufacturerRepo.save(manufacturer4);
     }
 }
