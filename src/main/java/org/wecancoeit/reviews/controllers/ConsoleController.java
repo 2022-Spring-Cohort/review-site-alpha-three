@@ -24,7 +24,7 @@ public class ConsoleController {
     }
 
     @GetMapping("/consoles")
-    public String showConsolesemplate(Model model) {
+    public String showConsolesTemplate(Model model) {
         model.addAttribute("consoles", consoleRepo.findAll());
         return "ConsolesTemplate";
     }

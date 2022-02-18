@@ -23,7 +23,7 @@ public class Console {
     private String imgUrl;
     private String hashtags;
 
-    @ManyToMany(mappedBy = "consoles")
+    @OneToMany(mappedBy = "consoles")
     private Collection<Manufacturer> manufacturers ;
 
 

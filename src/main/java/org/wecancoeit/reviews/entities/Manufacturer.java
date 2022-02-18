@@ -1,23 +1,26 @@
 package org.wecancoeit.reviews.entities;
+import org.wecancoeit.reviews.repos.ManufacturerRepository;
 
 import javax.persistence.*;
-import java.util.ArrayList;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import java.util.Collection;
 import java.util.Arrays;
 import java.util.Collection;
 import org.wecancoeit.reviews.entities.Console;
 
 @Entity
 public class Manufacturer {
+
     @Id
     @GeneratedValue
-    private long id;
-    private String name;
+    public long id;
+    public String name;
 
-    // @ManyToOne
-    // private Book book;
 
     @ManyToMany
-    private Collection<Console> consoles;
+    private Collection<Console> consoles ;
 
     public Manufacturer() {
 
@@ -26,7 +29,6 @@ public class Manufacturer {
     public Manufacturer(String name, Console...consoles) {
         this.name = name;
         this.consoles = Arrays.asList(consoles);
-        // this.books = new ArrayList<>();
     }
 
     public void addConsole(Console console) {
