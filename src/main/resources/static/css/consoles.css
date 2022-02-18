@@ -183,13 +183,14 @@ h2{
 }
 
 .console__img {
-    height: 400px;
+    width 75%
+    height: 75%
     transition: transform 750ms cubic-bezier(.5, 0, .5, 1);
     opacity: 250ms linear;
     background-color: rgba(255, 255, 255, 0.01);
   display: block;
-  max-width:420px;
-  max-height:230px;
+  max-width:250px;
+  max-height:250px;
   width: auto;
   height: auto;
   padding: 1em;
@@ -234,13 +235,14 @@ h1 {
 /* footer */
 
 .footer {
+
     background: var(--color-dark);
     color: var(--color-light);
     text-align: center;
+    position: absolute;
     width: 100%;
     height: auto;
     padding: 1em;
-    position: absolute;
     font-size: var(--font-style-h3);
 }
 .footer p{
