@@ -28,7 +28,7 @@ public class Console {
 
 
 
-    public Console(String name, String manufacturer, String releaseDate, String type,String imgUrl) {
+    public Console(String name, String manufacturer, String releaseDate, String type, String imgUrl) {
         this.name = name;
         this.manufacturer = manufacturer;
         this.releaseDate = releaseDate;

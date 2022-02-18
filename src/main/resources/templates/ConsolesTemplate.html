@@ -28,7 +28,7 @@
 <body>
 <div class="navbar">
     <a href="/">Home</a>
-    <a href="/ConsolesTemplate.html">All Consoles</a>
+    <a href="/consoles">All Consoles</a>
     <div class="dropdown">
         <button class="dropbtn">Manufacturer
             <i class="fa fa-caret-down"></i>
@@ -77,7 +77,7 @@
             <!-- console 1 -->
             <a th:each="console:${consoles}" th:href="'/console/'+${console.id}" class="console__item">
                 <img th:src="${console.imgUrl}" alt="picture of console" class="console__img">
-                <h2>Sega Genesis</h2>
+                <h2 th:text="${console.name}"></h2>
             </a>
 
 <!--            &lt;!&ndash; console 2 &ndash;&gt;-->
@@ -186,7 +186,7 @@
 <!--                <img src="/Images/ps5.png" alt="" class="console__img">-->
 <!--                <h2>Xbox One</h2>-->
 <!--            </a>-->
-<!--        </div>-->
+        </div>
     </section>
 </section>
 

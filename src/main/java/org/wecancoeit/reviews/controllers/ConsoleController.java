@@ -29,7 +29,7 @@ public class ConsoleController {
         return "ConsolesTemplate";
     }
 
-    @GetMapping("/consoles/{id}")
+    @GetMapping("/console/{id}")
     public String showConsoleTemplate(Model model, @PathVariable long id) {
         Optional<Console> tempConsole = consoleRepo.findById(id);
         if (tempConsole.isPresent()) {

@@ -21,7 +21,7 @@
 <body>
 <div class="navbar">
     <a href="/">Home</a>
-    <a href="/ConsolesTemplate.html">All Consoles</a>
+    <a href="/consoles">All Consoles</a>
     <div class="dropdown">
         <button class="dropbtn">Manufacturer
             <i class="fa fa-caret-down"></i>
@@ -63,12 +63,12 @@
     <div class = top>
         <section class = "nameImage">
             <h1 th:text="${inConsole.name}">System Name</h1>
-            <img class = "system_image" src="../Images/SNES.png">
+            <img th:src="${inConsole.imgUrl}" class ="system_image">
         </section>
     </div>
 
     <section class = "description">
-        <p class = "systemDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid laborum unde necessitatibus, dolorem, magnam suscipit sapiente quo eligendi voluptatem, eum neque eaque at enim? Iure deleniti, dicta dolor in animi placeat nisi vero, eaque alias nam voluptatum consequuntur soluta neque odio! Est, maiores! Consectetur nemo ab suscipit natus possimus itaque?</p>
+        <p class = "systemDescription" th:text="${inConsole.description}">Description</p>
     </section>
 
     <div class = "bottom">
