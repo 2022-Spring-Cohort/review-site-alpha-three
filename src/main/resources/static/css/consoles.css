@@ -247,7 +247,6 @@ h1 {
 /* footer */
 
 .footer {
-
     background: var(--color-dark);
     color: var(--color-light);
     text-align: center;
@@ -268,6 +267,7 @@ h1 {
 
 .footer__link {
     font-weight: var(--font-weight-bold);
+    font-family: var(--font-family-secondary);
 }
 
 .footer__link:hover{
@@ -276,4 +276,7 @@ h1 {
 
 .footer__link:hover {
     text-decoration: underline;
+}
+.copyright {
+    font-size: 0.85rem;
 }
