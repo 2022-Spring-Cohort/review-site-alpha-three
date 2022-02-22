@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 
 //POJO
@@ -26,17 +28,9 @@ public class Console {
     @OneToMany(mappedBy = "consoles")
     private Collection<Manufacturer> manufacturers ;
 
-    @ManyToOne
-    @JoinColumn(name = "reviews_id")
-    private Reviews reviews;
+    @OneToMany(mappedBy = "console")
+    private Collection<Review> reviews;
 
-    public Reviews getReviews() {
-        return reviews;
-    }
-
-    public void setReviews(Reviews reviews) {
-        this.reviews = reviews;
-    }
 
 
     public Console(String name, String manufacturer, String releaseDate, String type, String imgUrl) {
@@ -47,9 +41,14 @@ public class Console {
         this.imgUrl = imgUrl;
         this.rating = 0;
         this.description = "";
+        //this.reviews = Arrays.asList(reviews);
     }
 
     private Console() {
+    }
+
+    public Collection<Review> getReviews() {
+        return reviews;
     }
 
     public String getName() {

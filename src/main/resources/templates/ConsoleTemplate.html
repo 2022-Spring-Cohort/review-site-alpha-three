@@ -101,10 +101,12 @@
 <!--                </ul>-->
 <!--            </div>-->
 
-            <form class = "formContainer">
+            <form class = "formContainer" th:action="'/console/' + ${inConsole.id}" method="POST">
                 <label for="review">
                     <h2>Submit Review</h2>
                 </label>
+                    <label for="name">First name:</label>
+                    <input type="text" id="name" name="name"><br><br>
                 <textarea id="review" name="review" placeholder="Leave a review..." style="height:200px"></textarea>
                 <input type="submit">
             </form>

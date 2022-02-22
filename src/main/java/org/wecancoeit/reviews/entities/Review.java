@@ -9,7 +9,7 @@ import java.util.Collection;
 //POJO
 
 @Entity
-public class Reviews {
+public class Review {
 
     @Id
     @GeneratedValue
@@ -18,18 +18,19 @@ public class Reviews {
     private String reviewbody;
 
 
-    @OneToMany(mappedBy = "reviews")
-    private Collection<Console> consoles;
+    @ManyToOne
+    private Console console;
 
 
-    public Reviews(String name, String reviewbody) {
+    public Review(String name, String reviewbody, Console console) {
         this.name = name;
         this.reviewbody = reviewbody;
+        this.console = console;
 
 
     }
 
-    private Reviews() {
+    private Review() {
     }
 
     public long getId() {

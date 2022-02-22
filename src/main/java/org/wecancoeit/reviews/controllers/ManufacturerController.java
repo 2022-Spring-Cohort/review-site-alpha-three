@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.wecancoeit.reviews.entities.Manufacturer;
+import org.wecancoeit.reviews.repos.ConsoleRepository;
 import org.wecancoeit.reviews.repos.ManufacturerRepository;
 
 import java.util.Optional;
@@ -14,11 +15,12 @@ import java.util.Optional;
 @Controller
 public class ManufacturerController {
     private ManufacturerRepository manufacturerRepo;
+    private ConsoleRepository consoleRepo;
 
-    public ManufacturerController(ManufacturerRepository manufacturerRepo) {
+    public ManufacturerController(ManufacturerRepository manufacturerRepo, ConsoleRepository consoleRepo) {
         this.manufacturerRepo = manufacturerRepo;
+        this.consoleRepo = consoleRepo;
     }
-
 
     @GetMapping("/manufacturers")
     public String showManufacturersTemplate(Model model) {
@@ -28,11 +30,15 @@ public class ManufacturerController {
 
     @GetMapping("/manufacturer/{id}")
     public String showManufacturerPage(Model model, @PathVariable Long id) {
-        Optional<Manufacturer> tempManufacturer = manufacturerRepo.findById(id);
-        if (tempManufacturer.isPresent()) {
-            model.addAttribute("inManufacturer", tempManufacturer.get());
+        Optional<Manufacturer> tempManufacturerOptional = manufacturerRepo.findById(id);
+        if (tempManufacturerOptional.isPresent()) {
+            Manufacturer tempManufacturer = tempManufacturerOptional.get();
+            model.addAttribute("consoles", consoleRepo.findByManufacturerIgnoreCase(tempManufacturer.name).get());
+            model.addAttribute("filterName", tempManufacturer.name);
         }
-        return "ManufacturerTemplate";
+
+        return "ConsolesTemplate";
+
     }
 
     @GetMapping("/manufacturers/name/{name}")

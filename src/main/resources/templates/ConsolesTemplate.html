@@ -63,7 +63,7 @@
 
         <section>
             <section class="all-consoles" id="all-consoles">
-                <h1 class="all-consoles-title">All Consoles</h1>
+                <h1 class="all-consoles-title" th:text="${filterName}">All Consoles</h1>
                     <div class="consoles">
                         <!-- all consoles -->
                         <a th:each="console:${consoles}" th:href="'/console/'+${console.id}" class="console__item">

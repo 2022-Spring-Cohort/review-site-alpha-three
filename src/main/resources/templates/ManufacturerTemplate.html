@@ -6,11 +6,11 @@
 </head>
 <body>
 <header>
-    <h1>Welcome to Author!</h1>
+    <h1>Welcome to Manufacturer!</h1>
 </header>
 <main>
     <div th:each="manufacturer : ${manufacturers}">
-    <span th:text="${inManufacturer.name}"></span>
+    <span th:text="${manufacturer.name}"></span>
 </div>
 </main>
 </body>
