@@ -14,8 +14,8 @@ public class Review {
     @Id
     @GeneratedValue
     public long id;
-    private String name;
-    private String reviewbody;
+    public String name;
+    public String reviewbody;
 
 
     @ManyToOne

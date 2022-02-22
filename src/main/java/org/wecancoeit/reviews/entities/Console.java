@@ -33,7 +33,7 @@ public class Console {
 
 
 
-    public Console(String name, String manufacturer, String releaseDate, String type, String imgUrl) {
+    public Console(String name, String manufacturer, String releaseDate, String type, String imgUrl, Review...reviews) {
         this.name = name;
         this.manufacturer = manufacturer;
         this.releaseDate = releaseDate;
@@ -41,7 +41,7 @@ public class Console {
         this.imgUrl = imgUrl;
         this.rating = 0;
         this.description = "";
-        //this.reviews = Arrays.asList(reviews);
+        this.reviews = Arrays.asList(reviews);
     }
 
     private Console() {
