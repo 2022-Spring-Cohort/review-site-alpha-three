@@ -26,6 +26,17 @@ public class Console {
     @OneToMany(mappedBy = "consoles")
     private Collection<Manufacturer> manufacturers ;
 
+    @ManyToOne
+    @JoinColumn(name = "reviews_id")
+    private Reviews reviews;
+
+    public Reviews getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(Reviews reviews) {
+        this.reviews = reviews;
+    }
 
 
     public Console(String name, String manufacturer, String releaseDate, String type, String imgUrl) {
