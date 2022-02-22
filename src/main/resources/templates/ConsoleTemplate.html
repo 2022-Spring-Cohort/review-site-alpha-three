@@ -115,10 +115,9 @@
     <div class = "submittedReviews">
         <h2>Submitted Reviews</h2>
         <a class="reviewList">
-            <ul>
-            <li>This is a sample review I like the console a lot because it play games and me like games.  Perfect score 5/7, 7/7 with rice.</li>
-            <li>I hate this stupid console I bought it and fell in love and started bringing it to bed with me, but my wife left and took the goldfish. It was fine for awhile, the console and I got along great. It is pretty low maintenance.  However, recently I've been noticing we have a lot of differences.  This console doesn't like the same music I do, and it won't ever go out dancing with me. I miss my wife.</li>
-        </ul>
+                <p th:text="${inConsole.reviews}"/>
+                </p>
+        </a>
         </a>
     </div>
 </div>

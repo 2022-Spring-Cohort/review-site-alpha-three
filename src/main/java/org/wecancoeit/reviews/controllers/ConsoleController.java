@@ -52,6 +52,7 @@ public class ConsoleController {
         return "redirect:/console/" + id;
     }
 
+
     @GetMapping("/consoles/name/{name}")
     public String showConsoleByName(Model model, @PathVariable String name) {
         Optional<Console> tempConsole = consoleRepo.findByNameIgnoreCase(name);
