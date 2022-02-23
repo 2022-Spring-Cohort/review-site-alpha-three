@@ -119,7 +119,7 @@
         <h2>Submitted Hashtags</h2>
         <div class="container" th:each = "hashtag: ${inConsole.hashtags}">
             <ul>
-                <p th:text= "${hashtag.getHashtagbody}"></p>
+                <p th:text= "${hashtag.getHashtagbody}" th:href="'/hashtag/'+${hashtag.id}"></p>
             </ul>
         </div>
     </div>
