@@ -100,25 +100,28 @@
 <!--                    <label for="1-star" title="Bad">1 star</label>-->
 <!--                </ul>-->
 <!--            </div>-->
+            <form class = "formContainer" th:action="'/console/' + ${inConsole.id}" method="POST">
+                <h2>Submit Hashtag</h2>
+                <textarea id="hashtag" name="hashtag" placeholder="Add a hashtag..." style="height: 1em" size = "30" maxlength="30"></textarea>
+                <input type="submit" size = "10">
+            </form>
 
             <form class = "formContainer" th:action="'/console/' + ${inConsole.id}" method="POST">
                 <label for="review">
                     <h2>Submit Review</h2>
                 </label>
                     <label for="name">First name:</label>
-                    <input type="text" id="name" name="name"><br><br>
-                <textarea id="review" name="review" placeholder="Leave a review..." style="height:200px"></textarea>
-                <input type="submit">
+                    <input type="text" id="name" name="name" placeholder = "Name" maxlength = "50"><br><br>
+                <textarea id="review" name="review" placeholder="Leave a review..." style="height:200px" maxlength="255"></textarea>
+                <input type="submit" size = "10">
             </form>
         </section>
     </div>
     <div class = "submittedReviews">
         <h2>Submitted Reviews</h2>
-        <div class="container" th:each = "review: ${inConsole.reviews}">
-            <ul>
-                <p th:text= "${review.getName}"></p>
-                <p th:text= "${review.getReviewbody}"></p>
-            </ul>
+        <div class="reviewContainer" th:each = "review: ${inConsole.reviews}">
+            <p class = "reviewName" th:text= "'Reviewed by: ' + ${review.getName}"></p>
+            <p class = "reviewText" th:text= "${review.getReviewbody}"></p>
         </div>
     </div>
 </div>
