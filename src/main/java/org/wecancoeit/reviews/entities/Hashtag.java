@@ -19,7 +19,7 @@ public class Hashtag {
     private Collection<Console> consoles;
 
 
-    public Hashtag(String hashtagbody) {
+    public Hashtag(String hashtagbody, Console...console) {
         this.hashtagbody = hashtagbody;
         this.consoles = new ArrayList<>();
 

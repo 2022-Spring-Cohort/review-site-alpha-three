@@ -3,9 +3,11 @@ package org.wecancoeit.reviews;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+import org.wecancoeit.reviews.entities.Hashtag;
 import org.wecancoeit.reviews.entities.Manufacturer;
 import org.wecancoeit.reviews.entities.Console;
 import org.wecancoeit.reviews.repos.ConsoleRepository;
+import org.wecancoeit.reviews.repos.HashtagRepository;
 import org.wecancoeit.reviews.repos.ManufacturerRepository;
 
 @Component
@@ -14,6 +16,8 @@ public class Populator implements CommandLineRunner {
     ConsoleRepository consoleRepo;
     @Autowired
     ManufacturerRepository manufacturerRepo;
+    @Autowired
+    HashtagRepository hashtagRepo;
 
     @Override
     public void run(String... args) throws Exception {
@@ -62,5 +66,8 @@ public class Populator implements CommandLineRunner {
         manufacturerRepo.save(manufacturer3);
         Manufacturer manufacturer4 = new Manufacturer("Sega", console1, console4, console6);
         manufacturerRepo.save(manufacturer4);
+
+        Hashtag hashtag1 = new Hashtag("#FamilyFun", console1, console4, console14);
+        hashtagRepo.save(hashtag1);
     }
 }
