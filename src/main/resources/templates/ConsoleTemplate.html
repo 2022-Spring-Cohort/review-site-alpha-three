@@ -19,56 +19,57 @@
 <!-- nav bar -->
 
 <body>
-<div class="navbar">
-    <a href="/">Home</a>
-    <a href="/consoles">All Consoles</a>
-    <div class="dropdown">
-        <button class="dropbtn">Manufacturer
-            <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-            <a href="/manufacturer/20">Sony</a>
-            <a href="/manufacturer/19">Microsoft</a>
-            <a href="/manufacturer/21">Nintendo</a>
-            <a href="/manufacturer/22">Sega</a>
+    <div class="navbar">
+        <a href="/">Home</a>
+        <a href="/consoles">All Consoles</a>
+        <div class="dropdown">
+            <button class="dropbtn">Manufacturer
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="/manufacturer/20">Sony</a>
+                <a href="/manufacturer/19">Microsoft</a>
+                <a href="/manufacturer/21">Nintendo</a>
+                <a href="/manufacturer/22">Sega</a>
+            </div>
         </div>
-    </div>
-    <div class="dropdown">
-        <button class="dropbtn">Rating
-            <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-            <a href="#">⭐⭐⭐⭐⭐</a>
-            <a href="#">⭐⭐⭐⭐</a>
-            <a href="#">⭐⭐⭐</a>
-            <a href="#">⭐⭐</a>
-            <a href="#">⭐</a>
+        <div class="dropdown">
+            <button class="dropbtn">Rating
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="#">⭐⭐⭐⭐⭐</a>
+                <a href="#">⭐⭐⭐⭐</a>
+                <a href="#">⭐⭐⭐</a>
+                <a href="#">⭐⭐</a>
+                <a href="#">⭐</a>
+            </div>
         </div>
+        <a href="#contact">Contact Us</a>
     </div>
-    <a href="#contact">Contact Us</a>
-</div>
 
-<!-- header -->
+    <!-- header -->
 
-<header>
-    <div class="image-container">
-        <h1 class="header-title"><strong>Alpha Three</strong><strong></strong></h1>
-        <p class="header-subtitle"><strong>"Your #1 Console Review Source"</strong></p>
-        <img src="../Images/A3.png" class="logo">
-    </div>
-</header>
+    <header>
+        <div class="image-container">
+            <h1 class="header-title"><strong>Alpha Three</strong><strong></strong></h1>
+            <p class="header-subtitle"><strong>"Your #1 Console Review Source"</strong></p>
+            <img src="../Images/A3.png" class="logo">
+        </div>
+    </header>
 
-<!-- Main page area -->
-<div class = "reviewSection">
-    <div class = top>
-        <section class = "nameImage">
-            <h1 th:text="${inConsole.name}">System Name</h1>
-            <img th:src="${inConsole.imgUrl}" class ="system_image">
-        </section>
+    <!-- Main page area -->
+    <div class = "reviewSection">
+        <div class = top>
+            <section class = "nameImage">
+                <h1 th:text="${inConsole.name}">System Name</h1>
+                <img th:src="${inConsole.imgUrl}" class ="system_image">
+            </section>
+        </div>
     </div>
 
     <section class = "description">
-<!--        <p class = "systemDescription" th:text="${inConsole.description}">Description</p>-->
+    <!--<p class = "systemDescription" th:text="${inConsole.description}">Description</p>-->
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
     </section>
 
@@ -81,58 +82,45 @@
             <p>Portability:</p>
             <h2 th:text="${inConsole.type}"></h2>
             <p>Tags:</p>
-            <h2 th:text="${inConsole.hashtags}">Hashtags</h2>
+            <div class="hashContainer" th:each = "hashtag: ${inConsole.hashtags}">
+                <h2 th:text= "${hashtag.getHashtagbody}">Hashtags</h2>
+            </div>
         </section>
 
-
-            <form class = "formContainer" action="review" th:action="'/console/' + ${inConsole.id}" method="POST">
-                <label for="review">
+        <div class = "ratingSection">
+            <section>
+                <form class = "formContainer" action="review" th:action="'/console/' + ${inConsole.id}" method="POST">
                     <h2>Submit Review</h2>
-                </label>
-                    <label for="name">First name:</label>
-                    <input type="text" id="name" name="name"><br><br>
-                <textarea id="review" name="review" placeholder="Leave a review..." style="height:200px"></textarea>
-                <input type="submit">
-            </form>
-        </section>
+                    <input type="text" id="name" name="name" placeholder = "Your name"><br><br>
+                    <textarea id="review" name="review" placeholder="Leave a review..." style="height:200px" maxlength="255"></textarea>
+                    <input type="submit">
+                </form>
+            </section>
+
+            <section>
+                <form class = "formContainer2" action= "hashtag"  th:action="'/console/' + ${inConsole.id}"  method="POST">
+                    <h2>Submit hashtag</h2>
+                    <textarea id="hashtag" name="hashtag" placeholder="Leave a hashtag..."></textarea>
+                    <input type="submit">
+                </form>
+            </section>
+        </div>
+    </div>
 
     <div class = "submittedReviews">
         <h2>Submitted Reviews</h2>
         <div class="container" th:each = "review: ${inConsole.reviews}">
-            <ul>
-                <p th:text= "${review.getName}"></p>
-                <p th:text= "${review.getReviewbody}"></p>
-            </ul>
-</div>
-
-    <section>
-        <form class = "formContainer2" action= "hashtag"  th:action="'/console/' + ${inConsole.id}"  method="POST">
-            <label for="hashtag">
-                <h2>Submit hashtag</h2>
-            </label>
-            <textarea id="hashtag" name="hashtag" placeholder="Leave a hashtag..." style="height:200px"></textarea>
-            <input type="submit">
-        </form>
-        </section>
-
-    <div class = "submittedHashtags">
-        <h2>Submitted Hashtags</h2>
-        <div class="container" th:each = "hashtag: ${inConsole.hashtags}">
-            <ul>
-                <p th:text= "${hashtag.getHashtagbody}"></p>
-            </ul>
-        </div>
-    </div>
+            <p class = "reviewName" th:text= "${review.getName}"></p>
+            <p class = "reviewText" th:text= "${review.getReviewbody}"></p>
         </div>
     </div>
 
 
-<!-- footer -->
+    <!-- footer -->
 
-<footer class="footer" id="contact">
-    <p>Please feel free to never contact us. Thank You.</p>
-    <a href="" class="footer__link">dontsend@email.com</a>
-</footer>
-</div>
+    <footer class="footer" id="contact">
+        <p>Please feel free to never contact us. Thank You.</p>
+        <a href="" class="footer__link">dontsend@email.com</a>
+    </footer>
 </body>
 </html>

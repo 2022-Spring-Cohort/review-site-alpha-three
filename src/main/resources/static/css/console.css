@@ -280,6 +280,12 @@ body {
 .formContainer {
     display: flex;
     flex-direction: column;
+    padding-bottom: 1em;
+}
+
+.formContainer2 {
+    display: flex;
+    flex-direction: column;
 }
 
 /* Star ratings */
@@ -355,11 +361,17 @@ body {
     font-family: var(--font-family-secondary);
 }
 
-.reviewList li {
+.reviewName {
     color: #fff;
     font-family: var(--font-family-secondary);
     font-size: 1.5em;
-    padding: 1em;
+}
+
+.reviewText {
+    color: #fff;
+    font-family: var(--font-family-secondary);
+    font-size: 1.5em;
+    padding-bottom: 1em;
 }
 
 footer {
