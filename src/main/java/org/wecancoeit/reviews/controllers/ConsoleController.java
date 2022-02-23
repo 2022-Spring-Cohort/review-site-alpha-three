@@ -5,7 +5,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.wecancoeit.reviews.entities.Console;
 import org.wecancoeit.reviews.entities.Review;
+import org.wecancoeit.reviews.entities.Hashtag;
 import org.wecancoeit.reviews.repos.ConsoleRepository;
+import org.wecancoeit.reviews.repos.HashtagRepository;
 import org.wecancoeit.reviews.repos.ReviewRepository;
 
 import java.util.Optional;
@@ -14,11 +16,13 @@ import java.util.Optional;
 public class ConsoleController {
     private ConsoleRepository consoleRepo;
     private ReviewRepository reviewRepo;
+    private HashtagRepository hashtagRepo;
 
 
-    public ConsoleController(ConsoleRepository consoleRepo, ReviewRepository reviewRepo) {
+    public ConsoleController(ConsoleRepository consoleRepo, ReviewRepository reviewRepo, HashtagRepository hashtagRepo) {
         this.consoleRepo = consoleRepo;
         this.reviewRepo = reviewRepo;
+        this.hashtagRepo = hashtagRepo;
     }
 
     @GetMapping("/")
@@ -42,7 +46,17 @@ public class ConsoleController {
         }
         return "ConsoleTemplate";
     }
-    @PostMapping("/console/{id}")
+    @RequestMapping(params = "hashtag", value="/console/{id}", method = RequestMethod.POST)
+    public String addHashtagToConsole(@PathVariable long id, @RequestParam String hashtag) {
+        Optional<Console> tempConsole = consoleRepo.findById(id);
+        if (tempConsole.isPresent()) {
+            Hashtag tempHashtag = new Hashtag(hashtag);
+            tempHashtag.addConsole(tempConsole.get());
+            hashtagRepo.save(tempHashtag);
+        }
+        return "redirect:/console/" + id;
+    }
+    @RequestMapping(params = "review", method = RequestMethod.POST, value="/console/{id}")
     public String addReviewToConsole(@PathVariable long id, @RequestParam String review, @RequestParam String name) {
         Optional<Console> tempConsole = consoleRepo.findById(id);
         if (tempConsole.isPresent()) {
@@ -51,6 +65,16 @@ public class ConsoleController {
         }
         return "redirect:/console/" + id;
     }
+//    @RequestMapping(value="/console/{id}", method = RequestMethod.POST, params = "hashtag")
+//    public String addHashtagToConsole(@PathVariable long id, @RequestParam String hashtag) {
+//        Optional<Console> tempConsole = consoleRepo.findById(id);
+//        if (tempConsole.isPresent()) {
+//            Hashtag tempHashtag = new Hashtag(hashtag, tempConsole.get());
+//            hashtagRepo.save(tempHashtag);
+//        }
+
+//        return "redirect:/console/" + id;
+//    }
 
 
     @GetMapping("/consoles/name/{name}")

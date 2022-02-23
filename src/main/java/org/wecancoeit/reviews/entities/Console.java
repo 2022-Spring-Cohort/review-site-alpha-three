@@ -23,13 +23,15 @@ public class Console {
     private int rating;
     private String description;
     private String imgUrl;
-    private String hashtags;
 
     @OneToMany(mappedBy = "consoles")
     private Collection<Manufacturer> manufacturers ;
 
     @OneToMany(mappedBy = "console")
     private Collection<Review> reviews;
+
+    @ManyToMany(mappedBy = "consoles")
+    private Collection<Hashtag> hashtags;
 
 
 
@@ -67,9 +69,10 @@ public class Console {
         return id;
     }
 
-    public String getHashtags() {
+    public Collection<Hashtag> getHashtags() {
         return hashtags;
     }
+
 
     public String getDescription() {
         return description;

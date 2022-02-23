@@ -84,24 +84,8 @@
             <h2 th:text="${inConsole.hashtags}">Hashtags</h2>
         </section>
 
-        <section class = "ratingSection">
-<!--            <div class = "starSection">-->
-<!--                <h2>Rating</h2>-->
-<!--                <ul class="rate-area">-->
-<!--                    <input type="radio" id="5-star" name="crating" value="5">-->
-<!--                    <label for="5-star" title="Amazing">5 stars</label>-->
-<!--                    <input type="radio" id="4-star" name="crating" value="4">-->
-<!--                    <label for="4-star" title="Good">4 stars</label>-->
-<!--                    <input type="radio" id="3-star" name="crating" value="3">-->
-<!--                    <label for="3-star" title="Average">3 stars</label>-->
-<!--                    <input type="radio" id="2-star" name="crating" value="2">-->
-<!--                    <label for="2-star" title="Not Good">2 stars</label>-->
-<!--                    <input type="radio" id="1-star" required="" name="crating" value="1" aria-required="true">-->
-<!--                    <label for="1-star" title="Bad">1 star</label>-->
-<!--                </ul>-->
-<!--            </div>-->
 
-            <form class = "formContainer" th:action="'/console/' + ${inConsole.id}" method="POST">
+            <form class = "formContainer" action="review" th:action="'/console/' + ${inConsole.id}" method="POST">
                 <label for="review">
                     <h2>Submit Review</h2>
                 </label>
@@ -111,7 +95,7 @@
                 <input type="submit">
             </form>
         </section>
-    </div>
+
     <div class = "submittedReviews">
         <h2>Submitted Reviews</h2>
         <div class="container" th:each = "review: ${inConsole.reviews}">
@@ -119,9 +103,29 @@
                 <p th:text= "${review.getName}"></p>
                 <p th:text= "${review.getReviewbody}"></p>
             </ul>
+</div>
+
+    <section>
+        <form class = "formContainer2" action= "hashtag"  th:action="'/console/' + ${inConsole.id}"  method="POST">
+            <label for="hashtag">
+                <h2>Submit hashtag</h2>
+            </label>
+            <textarea id="hashtag" name="hashtag" placeholder="Leave a hashtag..." style="height:200px"></textarea>
+            <input type="submit">
+        </form>
+        </section>
+
+    <div class = "submittedHashtags">
+        <h2>Submitted Hashtags</h2>
+        <div class="container" th:each = "hashtag: ${inConsole.hashtags}">
+            <ul>
+                <p th:text= "${hashtag.getHashtagbody}"></p>
+            </ul>
         </div>
     </div>
-</div>
+        </div>
+    </div>
+
 
 <!-- footer -->
 
@@ -129,6 +133,6 @@
     <p>Please feel free to never contact us. Thank You.</p>
     <a href="" class="footer__link">dontsend@email.com</a>
 </footer>
-
+</div>
 </body>
 </html>
