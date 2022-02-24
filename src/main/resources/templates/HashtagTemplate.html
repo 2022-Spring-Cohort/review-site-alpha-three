@@ -50,18 +50,14 @@
 <div class = "hashtagSection">
     <div class = top>
         <section class = "hashtagbodyDisplay">
-            <h1 th:text="${hashtag.hashtagbody}">hashtag body</h1>
+            <div class="container" th:each = "console: ${inHashtag.consoles}">
+                <p class = "reviewName" th:text= "${console.getHashtags}"></p>
+            </div>
         </section>
     </div>
 
         </section>
 
-    <div class = "submittedReviews">
-        <h2>Submitted Hashtags</h2>
-        <div class="container" th:each = "hashtag: ${console.hashtags}">
-            <ul>
-                <p th:text= "${hashtag.getHashtagbody}"></p>
-            </ul>
 </div>
     </div>
 </div>

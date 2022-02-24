@@ -49,8 +49,16 @@ public class ConsoleController {
     @RequestMapping(params = "hashtag", value="/console/{id}", method = RequestMethod.POST)
     public String addHashtagToConsole(@PathVariable long id, @RequestParam String hashtag) {
         Optional<Console> tempConsole = consoleRepo.findById(id);
+        Optional<Hashtag> hashtagToAdd = hashtagRepo.findByHashtagbodyIgnoreCase(hashtag);
         if (tempConsole.isPresent()) {
-            Hashtag tempHashtag = new Hashtag(hashtag);
+            Hashtag tempHashtag;
+            if(hashtagToAdd.isPresent()){
+                tempHashtag = hashtagToAdd.get();
+            }
+            else
+            {
+                tempHashtag = new Hashtag(hashtag);
+            }
             tempHashtag.addConsole(tempConsole.get());
             hashtagRepo.save(tempHashtag);
         }

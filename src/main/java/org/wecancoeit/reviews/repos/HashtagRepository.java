@@ -8,6 +8,7 @@ import java.util.Collection;
 import java.util.Optional;
 
 public interface HashtagRepository extends CrudRepository<Hashtag,Long> {
+    public Optional<Hashtag> findByHashtagbodyIgnoreCase(String hashtagbody);
 }
 
 

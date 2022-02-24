@@ -35,9 +35,12 @@ public class HashtagController {
     public String showHashtagTemplate(Model model, @PathVariable long id) {
         Optional<Hashtag> tempHashtag = hashtagRepo.findById(id);
         if (tempHashtag.isPresent()) {
-            model.addAttribute("inHashtag", tempHashtag.get());
+            model.addAttribute("consoles", tempHashtag.get().getConsoles());
+            model.addAttribute("filterName", tempHashtag.get().hashtagbody);
+            return "ConsolesTemplate";
         }
-        return "HashtagTemplate";
-    }
 
+
+        return null;
+    }
 }

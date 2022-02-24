@@ -61,12 +61,12 @@
 
         <section>
             <section class="hashtags" id="all-hashtags">
-                <h1 class="all-hashtags-title" th:text="${filterName}">All Consoles</h1>
+                <h1 class="all-hashtags-title" th:text="${filterName}">Hashtags</h1>
                     <div class="consoles">
                         <!-- all consoles -->
                         <a th:each="hashtag:${hashtags}" th:href="'/hashtag/'+${hashtag.id}" class="console__item">
 
-                            <h2 th:text="${hashtag.hashtagbody}"></h2>
+                            <h2 th:text="${hashtag.hashtagbody}" th:href="'/hashtag/'+${hashtag.id}"></h2>
                         </a>
                     </div>
             </section>
