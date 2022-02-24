@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 
 <head>
     <meta charset="UTF-8">
@@ -54,55 +54,53 @@
                 <img th:src="${inConsole.imgUrl}" class ="system_image">
             </section>
         </div>
-    </div>
-
-    <section class = "description">
-        <p th:text="${inConsole.description}">Description</p>
-    </section>
-
-    <div class = "bottom">
-        <section class = "systemDetails">
-            <p>Release Date:</p>
-            <h2 th:text="${inConsole.releaseDate}"></h2>
-            <p>Manufacturer:</p>
-            <h2 th:text="${inConsole.manufacturer}"></h2>
-            <p>Portability:</p>
-            <h2 th:text="${inConsole.type}"></h2>
-            <p>Tags:</p>
-            <div class="hashContainer" th:each = "hashtag: ${inConsole.hashtags}">
-                <h2 th:text= "${hashtag.getHashtagbody}">Hashtags</h2>
-            </div>
+        <section class = "description">
+            <p th:text="${inConsole.description}">Description</p>
         </section>
 
-
-        <div class = "ratingSection">
-            <section>
-                <form class = "formContainer" action="review" th:action="'/console/' + ${inConsole.id}" method="POST">
-                    <h2>Submit Review</h2>
-                    <input type="text" id="name" name="name" placeholder = "Your name"><br><br>
-                    <textarea id="review" name="review" placeholder="Leave a review..." style="height:200px" maxlength="255"></textarea>
-                    <input type="submit">
-                </form>
+        <div class = "bottom">
+            <section class = "systemDetails">
+                <h2>Release Date:</h2>
+                <p th:text="${inConsole.releaseDate}"></p>
+                <h2>Manufacturer:</h2>
+                <p th:text="${inConsole.manufacturer}"></p>
+                <h2>Portability:</h2>
+                <p th:text="${inConsole.type}"></p>
+                <h2>Tags:</h2>
+                <div class="hashContainer" th:each = "hashtag: ${inConsole.hashtags}">
+                    <a th:text= "${hashtag.getHashtagbody}" th:href="'/hashtag/'+${hashtag.id}">Hashtags</a>
+                </div>
             </section>
 
-            <section>
-                <form class = "formContainer2" action= "hashtag"  th:action="'/console/' + ${inConsole.id}"  method="POST">
-                    <h2>Submit hashtag</h2>
-                    <textarea id="hashtag" name="hashtag" placeholder="Leave a hashtag..."></textarea>
-                    <input type="submit">
-                </form>
-            </section>
+
+            <div class = "ratingSection">
+                <section>
+                    <form class = "formContainer" action="review" th:action="'/console/' + ${inConsole.id}" method="POST">
+                        <h2>Submit Review</h2>
+                        <input class = "inputBorder" type="text" id="name" name="name" placeholder = "Your name" maxlength="30" size = "30"><br><br>
+                        <textarea class = "inputBorder" id="review" name="review" placeholder="Leave a review..." style="height:200px" maxlength="255" size = "300"></textarea>
+                        <input class = "submitBorder" type="submit">
+                    </form>
+                </section>
+
+                <section>
+                    <form class = "formContainer2" action= "hashtag"  th:action="'/console/' + ${inConsole.id}"  method="POST">
+                        <h2>Submit #Hashtag</h2>
+                        <textarea class = "inputBorder" id="hashtag" name="hashtag" placeholder="Leave a #hashtag..." maxlength = "30" size = "50"></textarea>
+                        <input class = "submitBorder" type="submit">
+                    </form>
+                </section>
+            </div>
+        </div>
+
+        <div class = "submittedReviews">
+            <h2>Submitted Reviews</h2>
+            <div class="container" th:each = "review: ${inConsole.reviews}">
+                <p class = "reviewName" th:text= "'Reviewed by: ' + ${review.getName}"></p>
+                <p class = "reviewText" th:text= "${review.getReviewbody}"></p>
+            </div>
         </div>
     </div>
-
-    <div class = "submittedReviews">
-        <h2>Submitted Reviews</h2>
-        <div class="container" th:each = "review: ${inConsole.reviews}">
-            <p class = "reviewName" th:text= "${review.getName}"></p>
-            <p class = "reviewText" th:text= "${review.getReviewbody}"></p>
-        </div>
-    </div>
-
 
     <!-- footer -->
 

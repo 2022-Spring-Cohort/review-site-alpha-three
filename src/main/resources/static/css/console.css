@@ -157,6 +157,10 @@ body {
     padding: 0;
 }
 
+.mainPage {
+    width: 100%;
+}
+
 .reviewSection {
     display: grid;
     grid-template-columns: 1fr 2fr 2fr 1fr;
@@ -249,11 +253,11 @@ body {
 
 .systemDetails p {
     font-size: 1.5em;
-    color: #cccccc;
 }
 
 .systemDetails h2 {
     font-size: 2em;
+    color: #cccccc;
 }
 
 .systemDescription{
@@ -277,6 +281,11 @@ body {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
+.ratingSection h2 {
+    font-size: 2em;
+    color: #cccccc;
+}
+
 .formContainer {
     display: flex;
     flex-direction: column;
@@ -286,6 +295,21 @@ body {
 .formContainer2 {
     display: flex;
     flex-direction: column;
+}
+
+.inputBorder {
+    border-radius: 8px;
+    padding: 1em;
+}
+
+.submitBorder {
+    border-radius: 8px;
+}
+
+.hashContainer a {
+    font-family: var(--font-family-secondary);
+    font-size: 2em;
+    color: #f2e03f;
 }
 
 /* Star ratings */
@@ -357,7 +381,8 @@ body {
 }
 
 .submittedReviews h2 {
-    color: #fff;
+    font-size: 2em;
+    color: #cccccc;
     font-family: var(--font-family-secondary);
 }
 
