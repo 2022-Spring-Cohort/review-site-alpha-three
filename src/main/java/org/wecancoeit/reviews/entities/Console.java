@@ -42,7 +42,7 @@ public class Console {
         this.type = type;
         this.imgUrl = imgUrl;
         this.rating = 0;
-        this.description = "";
+        this.description = description;
         this.reviews = Arrays.asList(reviews);
     }
 
