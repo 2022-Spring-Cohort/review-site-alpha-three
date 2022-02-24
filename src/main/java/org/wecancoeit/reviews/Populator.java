@@ -21,17 +21,17 @@ public class Populator implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Console console1 = new Console("Sega Genesis", "Sega", "08/14/1989", "Console","/Images/sega.png");
+        Console console1 = new Console("Sega Genesis", "Sega", "08/14/1989", "Console","The Sega Genesis, known as the Mega Drive outside North America, is a 16-bit fourth-generation home video game console developed and sold by Sega. The Genesis was Sega's third console and the successor to the Master System.", "/Images/sega.png");
         consoleRepo.save(console1);
-        Console console2 = new Console("Nintendo Gameboy", "Nintendo", "1989", "Handheld", "/Images/gameboy.png");
+        Console console2 = new Console("Nintendo Gameboy", "Nintendo", "1989", "Handheld", "Nintendo's second handheld game console, the Game Boy, combines features from both the NES home system and Game & Watch hardware. The console features a dot-matrix screen with adjustable contrast dial, five game control buttons (a directional pad, two game buttons, and \"START\" and \"SELECT\"), a single speaker with adjustable volume dial, and, like its rivals, uses cartridges as physical media for games.", "/Images/gameboy.png");
         consoleRepo.save(console2);
-        Console console3 = new Console("Nintendo SNES", "Nintendo", "11/21/1990", "Console", "/Images/SNES.png");
+        Console console3 = new Console("Nintendo SNES", "Nintendo", "11/21/1990", "Console", "The Super NES is Nintendo's second programmable home console, following the Nintendo Entertainment System (NES). The console introduced advanced graphics and sound capabilities compared with other systems at the time. It was designed to accommodate the ongoing development of a variety of enhancement chips integrated into game cartridges to be competitive into the next generation.", "/Images/SNES.png");
         consoleRepo.save(console3);
-        Console console4 = new Console("Sega Gamegear", "Sega", "10/6/1990", "Handheld", "/Images/gamegear.png");
+        Console console4 = new Console("Sega Gamegear", "Sega", "10/6/1990", "Handheld", "The Game Gear primarily competed with Nintendo's Game Boy, the Atari Lynx, and NEC's TurboExpress. It shares much of its hardware with the Master System, and can play Master System games by the use of an adapter. Sega positioned the Game Gear, which had a full-color backlit screen with a landscape format, as a technologically superior handheld to the Game Boy.", "/Images/gamegear.png");
         consoleRepo.save(console4);
-        Console console5 = new Console("Playstation (1)", "Sony", "9/16/1995", "Console", "/Images/ps1.png");
+        Console console5 = new Console("Playstation (1)", "Sony", "9/16/1995", "Console", "The original PlayStation was the first of the ubiquitous PlayStation series of console and hand-held game devices. It was part of the fifth generation of video game consoles competing against the Sega Saturn and the Nintendo 64. It eventually became the first video game console to sell 120 million units.", "/Images/ps1.png");
         consoleRepo.save(console5);
-        Console console6 = new Console("Sega Dreamcast", "Sega", "11/27/1998", "Console", "/Images/dreamcast.png");
+        Console console6 = new Console("Sega Dreamcast", "Sega", "11/27/1998", "Console", "The Dreamcast was the first in the sixth generation of video game consoles, preceding Sony's PlayStation 2, Nintendo's GameCube, and Microsoft's Xbox. The Dreamcast was Sega's final home console, marking the end of the company's eighteen years in the console market.", "/Images/dreamcast.png");
         consoleRepo.save(console6);
         Console console7 = new Console("Playstation 2", "Sony", "3/4/2000", "Console", "/Images/ps2.png");
         consoleRepo.save(console7);
