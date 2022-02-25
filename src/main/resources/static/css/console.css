@@ -406,6 +406,8 @@ body {
 }
 
 footer {
+    position: fixed;
+    bottom: 0;
     margin: 1em;
     display: flex;
     flex-direction: column;
