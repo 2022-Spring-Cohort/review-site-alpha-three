@@ -67,10 +67,10 @@ public class Populator implements CommandLineRunner {
         Manufacturer manufacturer4 = new Manufacturer("Sega", console1, console4, console6);
         manufacturerRepo.save(manufacturer4);
 
-        Hashtag hashtag1 = new Hashtag("#FamilyFun", console1, console4, console14);
-        hashtagRepo.save(hashtag1);
-        hashtag1.addConsole(console1);
-        hashtag1.addConsole(console4);
-        hashtag1.addConsole(console14);
+//        Hashtag hashtag1 = new Hashtag("#FamilyFun", console1, console4, console14);
+//        hashtagRepo.save(hashtag1);
+//        hashtag1.addConsole(console1);
+//        hashtag1.addConsole(console4);
+//        hashtag1.addConsole(console14);
     }
 }
