@@ -152,6 +152,29 @@ header h1 {
 }
 
 /* console section */
+.center__heading{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin:0;
+    padding:0;
+}
+
+.hashtags__title{
+    border-radius: 4px;
+    width: 75%;
+    margin: 0 auto;
+    font-size: 3rem;
+    font-family: var(--font-family-secondary);
+    color: #fff;
+    background: linear-gradient(to bottom, var(--color-dark), rgb(1, 37, 114));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
 
 body {
     margin: 0;
@@ -191,6 +214,7 @@ h2{
     max-width: 1200px;
     margin: 0 auto;
     margin-bottom: 5em;
+    padding-top: 2em;
 }
 
 .console__item {
