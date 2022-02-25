@@ -123,20 +123,21 @@ display: block;
     text-align: center;
 }
 .header-title{
-    padding-top: 1em;
-    padding-left: 1em;
-    font-family: var(--font-family-primary);
-    text-transform: uppercase;
-    margin: 0;
-    font-size: 3.5rem;
-    white-space: nowrap;
-}
-.header-subtitle{
-    font-family: var(--font-family-primary);
-    padding-top: 1em;
-    margin: 0;
-    font-size: 1.75rem;
-}
+     float: center;
+     padding-top: 1em;
+     padding-left: 1em;
+     font-family: var(--font-family-primary);
+     text-transform: uppercase;
+     margin: 0;
+     font-size: 3.5rem;
+     white-space: nowrap;
+ }
+ .header-subtitle{
+     font-family: var(--font-family-secondary);
+     padding-top: 1em;
+     margin: 0;
+     font-size: 1.75rem;
+ }
 .logo{
     float: right;
     width: 220px;

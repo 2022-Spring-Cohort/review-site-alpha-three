@@ -124,6 +124,7 @@ display: block;
     text-align: center;
 }
 .header-title{
+    float: center;
     padding-top: 1em;
     padding-left: 1em;
     font-family: var(--font-family-primary);
@@ -133,7 +134,7 @@ display: block;
     white-space: nowrap;
 }
 .header-subtitle{
-    font-family: var(--font-family-primary);
+    font-family: var(--font-family-secondary);
     padding-top: 1em;
     margin: 0;
     font-size: 1.75rem;
