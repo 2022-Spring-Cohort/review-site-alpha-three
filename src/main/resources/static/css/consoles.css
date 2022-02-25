@@ -259,8 +259,9 @@ h1 {
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: auto;
+    height:50px;
     padding: 1em;
+    padding-top:1em;
     font-size: var(--font-style-h3);
 }
 .footer p{

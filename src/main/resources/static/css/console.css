@@ -405,13 +405,13 @@ body {
     padding-bottom: 1em;
 }
 
-footer {
-    position: fixed;
-    bottom: 0;
+.footer {
     margin: 1em;
     display: flex;
     flex-direction: column;
+    padding-top:1em;
     align-items: center;
+    height:50px;
     color: #fff;
     font-family: var(--font-family-secondary);
 }
