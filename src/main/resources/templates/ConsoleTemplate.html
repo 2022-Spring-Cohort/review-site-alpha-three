@@ -96,7 +96,7 @@
         <div class = "submittedReviews">
             <h2>Submitted Reviews</h2>
             <div class="container" th:each = "review: ${inConsole.reviews}">
-                <p class = "reviewName" th:text= "'Reviewed by: ' + ${review.getName}"></p>
+                <p class = "reviewName" th:text= "${review.getName} + ' says:'"></p>
                 <p class = "reviewText" th:text= "${review.getReviewbody}"></p>
             </div>
         </div>
