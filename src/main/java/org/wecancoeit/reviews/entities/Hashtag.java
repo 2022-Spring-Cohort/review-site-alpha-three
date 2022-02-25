@@ -24,6 +24,7 @@ public class Hashtag {
         this.consoles = new ArrayList<>();
 
 
+
     }
 
     private Hashtag() {

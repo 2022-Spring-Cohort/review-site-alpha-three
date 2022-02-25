@@ -79,7 +79,7 @@
                         <h2>Submit Review</h2>
                         <input class = "inputBorder" type="text" id="name" name="name" placeholder = "Your name" maxlength="30" size = "30"><br><br>
                         <textarea class = "inputBorder" id="review" name="review" placeholder="Leave a review..." style="height:200px" maxlength="255" size = "300"></textarea>
-                        <input class = "submitBorder" type="submit">
+                        <input class = "submitBorder" value="Submit Review" type="submit">
                     </form>
                 </section>
 
@@ -87,7 +87,7 @@
                     <form class = "formContainer2" action= "hashtag"  th:action="'/console/' + ${inConsole.id}"  method="POST">
                         <h2>Submit #Hashtag</h2>
                         <textarea class = "inputBorder" id="hashtag" name="hashtag" placeholder="Leave a #hashtag..." maxlength = "30" size = "50"></textarea>
-                        <input class = "submitBorder" type="submit">
+                        <input class = "submitBorder" value="Submit Hashtag" type="submit">
                     </form>
                 </section>
             </div>

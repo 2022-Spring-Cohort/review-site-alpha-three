@@ -178,6 +178,12 @@ h2{
     color: var(--color-light);
 
 }
+.hashtag__item{
+    font-family: var(--font-family-secondary);
+    font-size: 2em;
+    color: #f2e03f;
+    padding-top: .1em;
+}
 
 .consoles{
     display: grid;

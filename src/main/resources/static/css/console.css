@@ -32,6 +32,7 @@
 }
 html { 
     background: url(../Images/A3consoleWP.jpg) no-repeat center center fixed;
+
     max-width: 100%; 
     background-size: cover;
 }
@@ -163,7 +164,7 @@ body {
 
 .reviewSection {
     display: grid;
-    grid-template-columns: 1fr 2fr 2fr 1fr;
+    grid-template-columns: 1.5fr 1.5fr 1.5fr 1.5fr;
     grid-template-rows: auto auto auto;
     font-family: var(--font-family-primary);
     grid-gap: 1em;
@@ -192,9 +193,14 @@ body {
     border-radius: 25px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+@font-face {
+    font-family: 'PressStart2Pregular';
+    src: url(../fonts/PressStart2p-Regular.ttf);
 
+}
 .nameImage h1 {
-    font-size: 40px;
+    font-family: 'PressStart2Pregular';
+    font-size: 32px;
     padding: .5em;
 }
 

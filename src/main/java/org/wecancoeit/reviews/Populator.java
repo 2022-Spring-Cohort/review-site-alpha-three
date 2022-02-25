@@ -69,5 +69,8 @@ public class Populator implements CommandLineRunner {
 
         Hashtag hashtag1 = new Hashtag("#FamilyFun", console1, console4, console14);
         hashtagRepo.save(hashtag1);
+        hashtag1.addConsole(console1);
+        hashtag1.addConsole(console4);
+        hashtag1.addConsole(console14);
     }
 }
